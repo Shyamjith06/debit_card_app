@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>debit card management</title>
 <style type="text/css">
 #simple-form {
 	max-width: 1000px;
