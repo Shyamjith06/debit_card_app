@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>debit card management</title>
 <style type="text/css">
 #simple-form {
 	max-width: 1000px;
@@ -26,8 +26,7 @@
 	<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-md-4" id="simple-form">
-
-			<h2>Menu 1.0</h2>
+			<h2>Menu 1.1</h2>
 			<table class="table table-hover">
 				<tbody>
 					<tr>
