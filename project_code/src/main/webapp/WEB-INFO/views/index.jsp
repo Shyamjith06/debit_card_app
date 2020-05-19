@@ -26,7 +26,7 @@
 	<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-md-4" id="simple-form">
-			<h2>Menu 1.1</h2>
+			<h2>Menu 1.0 </h2>
 			<table class="table table-hover">
 				<tbody>
 					<tr>
