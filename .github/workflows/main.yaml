@@ -7,8 +7,47 @@ on:
       - master
       - main
 jobs:
+  practice:
+    runs-on: ubuntu-latest
+    output:
+       demo: ${{ steps.output_demo.outputs.name }}
+    steps:
+      - name: set output
+        id: output_demo
+        run: |
+           echo "name=shyamjith" >> $GITHUB_OUTPUT
+      - name: generate artifact 
+        run: |
+        echo "This is a test file" >> file.txt 
+        echo "file 2" >> file2.txt 
+      - name: upload artifact 
+        uses: actions/upload-artifact@v3
+        with:
+          name: buildArtifact
+          path:
+            ${{ github.workspace }}/file.txt
+            ${{ GITHUB.WORKSPACE}}/file2.txt
+
+  useOutput&Artifact:
+    needs: practice 
+    runs-on: ubuntu-latest
+    steps:
+      - name: print output
+        run: echo "The outpus is ${{ needs.practice.outputs.demo}}"
+      - name: download artifact
+        uses: actions/download-artifact@v3
+        with: 
+          name: buildArtifact
+          path: ${{ github.workspace}}
+      - name: list
+        run: |
+          ls
+          cat file1.txt
+          echo "fileeeeeeeeee"
+          cat file2.txt
   ci:
     runs-on: ubuntu-latest
+    needs: practice 
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -20,4 +59,5 @@ jobs:
     - name: Build with Maven
       run: |
         cd project_code
-        mvn -B package --file pom.xml
+        mvn clean install 
+        ls 
