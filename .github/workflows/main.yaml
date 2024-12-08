@@ -18,8 +18,8 @@ jobs:
            echo "name=shyamjith" >> $GITHUB_OUTPUT
       - name: generate artifact 
         run: |
-        echo "This is a test file" >> file.txt 
-        echo "file 2" >> file2.txt 
+          echo "This is a test file" >> file.txt 
+          echo "file 2" >> file2.txt 
       - name: upload artifact 
         uses: actions/upload-artifact@v3
         with:
