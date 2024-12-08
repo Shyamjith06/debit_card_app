@@ -9,7 +9,7 @@ on:
 jobs:
   practice:
     runs-on: ubuntu-latest
-    output:
+    outputs:
        demo: ${{ steps.output_demo.outputs.name }}
     steps:
       - name: set output
