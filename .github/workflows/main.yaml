@@ -28,7 +28,7 @@ jobs:
             ${{ github.workspace }}/file.txt
             ${{ GITHUB.WORKSPACE}}/file2.txt
 
-  useOutput&Artifact:
+  useOutputsAndArtifact:
     needs: practice 
     runs-on: ubuntu-latest
     steps:
