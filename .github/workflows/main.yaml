@@ -19,12 +19,13 @@ jobs:
       - name: generate artifact 
         run: |
           echo "This is a test file" >> file.txt 
-          echo "file 2" >> file2.txt 
+          echo "file 2" >> file2.txt
+          ls 
       - name: upload artifact 
         uses: actions/upload-artifact@v3
         with:
           name: buildArtifact
-          path:
+          path: |
             ${{ github.workspace }}/file.txt
             ${{ GITHUB.WORKSPACE}}/file2.txt
 
