@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print output
-        run: echo "The outpus is ${{ needs.practice.outputs.demo}}"
+        run: echo "The output is ${{ needs.practice.outputs.demo}}"
       - name: download artifact
         uses: actions/download-artifact@v3
         with: 
